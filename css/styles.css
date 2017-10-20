@@ -1,0 +1,166 @@
+#type-quiz button {
+  width: 200px;
+  margin: 12px;
+}
+
+#time-bar {
+  width: 90%;
+  height: 40px;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+#time-bar div:first-child {
+  position: relative;
+  height: 38px;
+  background: #15d61f;
+  border-radius: 5px;
+}
+
+.little-time-bar {
+  background: #efde5f;
+}
+
+.no-time-bar {
+  background: #f26363;
+}
+
+#time-bar label {
+  top: -38px;
+  width: 100%;
+  line-height: 38px;
+  text-align: center;
+}
+
+#time-counter {
+  position: relative;
+  top: -38px;
+}
+
+#type-quiz {}
+
+#time-count {
+  position: absolute;
+}
+
+.time-progress {
+  margin: 12px;
+}
+
+#progress-table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+.progress-table {
+  margin: 12px;
+}
+
+#progress-table tr td {
+  cursor: pointer;
+  background: #e2e2e2;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.answers {
+  margin: auto;
+  width: 80%;
+  background: #c6dcff;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.answers div button {
+  margin: 12px;
+  width: 60%;
+  height: 40px;
+}
+
+#results {
+  display: none;
+}
+
+#results {
+  margin: auto;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+
+.disabled-pointer {
+  pointer-events: none;
+}
+
+.question {
+  margin: auto;
+  width: 80%;
+}
+
+.question p {
+  margin: 12px;
+  float: left;
+}
+
+.question h2 {
+  margin-top: 72px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  #typeQuiz button {
+    width: 150px;
+    margin: 12px;
+  }
+}
+
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    background-color: green;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.progress-bar-animation {
+  animation-name: progressBar;
+  animation-duration: 20s;
+}
+
+@keyframes progressBar {
+  0% {
+    background-color: #15d61f;
+    width: 100%;
+  }
+  45% {
+    background-color: #15d61f;
+    width: 55%;
+  }
+  55% {
+    background-color: #efde5f;
+    width: 45%;
+  }
+  70% {
+    background-color: #efde5f;
+    width: 30%;
+  }
+  75% {
+    background-color: #f26363;
+    width: 25%;
+  }
+  100% {
+    background-color: #f26363;
+    width: 0%;
+  }
+}

@@ -1,7 +1,81 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>QUIZ</title>
+  </head>
+  <body>
+    <div id="type-quiz" class="container disabled">
+      <div class="row jumbotron" align="center">
+        <h2>Quiz 2017</h2>
+        <p>wybierz typ quizu</p>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
+          <button class="btn btn-primary">Geograficzny</button>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
+          <button class="btn btn-primary">Historyczny</button>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
+          <button class="btn btn-primary">Językowy</button>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
+          <button class="btn btn-primary">Matematyczny</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="questions" class="container jumbotron">
+      <div class="row time-progress">
+        <div id="time-bar">
+          <div></div>
+          <div id="time-counter"><label>20 s</label></div>
+        </div>
+      </div>
+      <div class="row progress-table">
+        <table id="progress-table">
+          <tr>
+          </tr>
+        </table>
+      </div>
+      <div id="question" class="row question" align="center">
+        <h2>Pytanie 1</h2>
+        <p>Przykład pytania numer 1 oraz odpowiedzi:</p>
+      </div>
+      <div id="answers" class="row answers">
+        <div class="col-xs-12 col-sm-6" align="center">
+          <button id="ansA" class="btn btn-primary">
+            <span>A: </span><span>Geograficzny</span>
+          </button>
+        </div>
+        <div class="col-xs-12 col-sm-6" align="center">
+          <button id="ansB" class="btn btn-primary">
+            <span>B: </span><span>Historyczny</span>
+          </button>
+        </div>
+        <div class="col-xs-12 col-sm-6" align="center">
+          <button id="ansC" class="btn btn-primary">
+            <span>C: </span><span>Językowy</span>
+          </button>
+        </div>
+        <div class="col-xs-12 col-sm-6" align="center">
+          <button id="ansD" class="btn btn-primary">
+            <span>D: </span><span>Matematyczny</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="results" class="container jumbotron" align="center">
+      <h1>
+        KONIEC QUIZU
+      </h1>
+    </div>
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
