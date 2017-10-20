@@ -4,51 +4,70 @@ var questionNumber = 1;
 var questionURL = "https://christopher2012.github.io/files/questions.json"
 var questionsJSON;
 var isQuizFinnish = false;
+var wrongAnswers = [];
 
-$.getJSON(questionURL, function(data) {
-    questionsJSON = data;
-    setTimeout(function(){
-      generateQuizSelect();
-    }, 1000);
-});
+var buttonTimeout;
+
+function downloadData(){
+  $.getJSON(questionURL, function(data) {
+      questionsJSON = data;
+      setTimeout(function(){
+        generateQuizSelect();
+      }, 1000);
+  });
+}
 
 function generateQuizSelect(){
   $("#loading-data").slideUp();
-  $("#type-quiz div").slideDown();
-
-  console.log(questionsJSON);
+  $("#type-quiz").slideDown();
+  $("#type-quiz div h2").text(questionsJSON.quizName);
 
   for(i = 0; i < questionsJSON.quiz.length; i++){
-    questionsJSON.quiz[i];
+    var appendString = "";
+    appendString += "<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\" align=\"center\">"
+    appendString += "<button class=\"btn btn-primary\">" + questionsJSON.quiz[i].type + "</button>"
+    appendString += "</div>"
+    $("#type-quiz div:first-child").append(appendString);
   }
-}
-
-$(document).ready(function() {
-
 
   $("#type-quiz div div button").click(function(){
-    $("#type-quiz").slideUp();
-    $("#questions").slideDown();
+    questionsJSON = questionsJSON.quiz[$("#type-quiz div div button").index(this)];
+    startQuiz();
+  });
+}
+
+function startQuiz(){
+
+  questionsCount = questionsJSON.questions.length;
+  for (i = 0; i < questionsCount; i++) {
+    var num = (Number(i) + 1)
+    if (num < 10)
+      num = "0" + num;
+    var node = "<td>" + num + "</td>";
+    $("#progress-table tr").append(node);
+  }
+
+  $("#questions div h1").text(questionsJSON.type);
+  $("#type-quiz").slideUp();
+  $("#questions").slideDown();
+
+  updateQuestion();
+  animateProgressBar();
+}
+
+
+
+$(document).ready(function() {
+  downloadData();
+
+  $("#type-quiz div div button").click(function(){
+
 
     questionsCount = questionsJSON.questions.length;
 
-    for (i = 0; i < questionsCount; i++) {
-      var num = (Number(i) + 1)
-      if (num < 10)
-        num = "0" + num;
-      var node = "<td>" + num + "</td>";
-      $("#progress-table tr").append(node);
-    }
 
 
 
-
-    $("#answers div button span:nth-child(2)").each(function(index){
-
-    });
-
-    animateProgressBar();
-    updateQuestion();
   });
 
 
@@ -74,8 +93,9 @@ $(document).ready(function() {
     $("#answers").addClass("disabled-pointer");
     $("#time-bar").stop(true);
     var answerIndex = questionsJSON.questions[questionNumber - 1].correctAnswer;
+    var buttonIndex = $("#answers div button").index(this);
 
-    if($("#answers div button").index(this) == answerIndex){
+    if(buttonIndex == answerIndex){
       $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "green");
       $(this).removeClass("btn-primary").addClass("btn-success");
 
@@ -83,6 +103,7 @@ $(document).ready(function() {
       $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "red");
       $(this).removeClass("btn-primary").addClass("btn-danger");
       $("#answers div:nth-child(" + (answerIndex + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
+      wrongAnswers[questionNumber - 1] = buttonIndex;
     }
 
     if(questionNumber < questionsCount){
@@ -106,8 +127,10 @@ function goToQuestion(index){
   if(isQuizFinnish){
     var correctAnswer = questionsJSON.questions[index].correctAnswer;
     $("#answers div:nth-child(" + (correctAnswer + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
+    if(wrongAnswers[index] !== typeof undefined){
+      $("#answers div:nth-child(" + (wrongAnswers[index] + 1) + ") button").removeClass("btn-primary").addClass("btn-danger");
+    }
   }
-
 }
 
 function finishQuiz(){
@@ -167,7 +190,6 @@ function updateQuestion(){
 
 function progressBar(timeleft, timetotal, $element){
   var progressBarWidth = timeleft * $element.width() / timetotal;
-  //$element.find("div:first-child").css("width", progressBarWidth);
 
   $element.find("div:first-child").animate({width: progressBarWidth}, timeleft == timetotal ? 0 : 1000, "linear");
   $("#time-bar label").html(timeleft + " s");

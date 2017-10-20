@@ -8,29 +8,22 @@
     <title>QUIZ</title>
   </head>
   <body>
+
     <div id="loading-data"  class="container jumbotron">
       <h1>Wczytywanie danych, proszę czekać...</h1>
     </div>
-    <div id="type-quiz" class="container">
-      <div class="row jumbotron no-display" align="center">
-        <h2>Quiz 2017</h2>
+
+    <div id="type-quiz" class="container no-display">
+      <div class="row jumbotron" align="center">
+        <h2></h2>
         <p>wybierz typ quizu</p>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
-          <button class="btn btn-primary">Geograficzny</button>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
-          <button class="btn btn-primary">Historyczny</button>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
-          <button class="btn btn-primary">Językowy</button>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" align="center">
-          <button class="btn btn-primary">Matematyczny</button>
-        </div>
       </div>
     </div>
 
-    <div id="questions" class="container jumbotron">
+    <div id="questions" class="container jumbotron no-display">
+      <div class="row" align="center">
+        <h1></h1>
+      </div>
       <div class="row time-progress">
         <div id="time-bar">
           <div></div>
@@ -43,10 +36,12 @@
           </tr>
         </table>
       </div>
+
       <div id="question" class="row question" align="center">
         <h2>Pytanie 1</h2>
         <p>Przykład pytania numer 1 oraz odpowiedzi:</p>
       </div>
+
       <div id="answers" class="row answers">
         <div class="col-xs-12 col-sm-6" align="center">
           <button id="ansA" class="btn btn-primary">
