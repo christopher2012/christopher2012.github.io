@@ -1,12 +1,19 @@
 var questionsCount = 20;
-var timeRunning = 20;
+var timeRunning = 5;
 var questionNumber = 1;
 var questionURL = "https://christopher2012.github.io/files/questions.json"
 var questionsJSON;
 var isQuizFinnish = false;
 var wrongAnswers = [];
-
+var noAnswers = [];
+var tempTimeLeft;
 var buttonTimeout;
+var labelTimeout;
+var labelTimeInterval;
+
+var tableColorRed = "";
+var tableColorGreen = "";
+var tableColorGrey = "";
 
 function downloadData(){
   $.getJSON(questionURL, function(data) {
@@ -51,84 +58,42 @@ function startQuiz(){
   $("#type-quiz").slideUp();
   $("#questions").slideDown();
 
-  updateQuestion();
-  animateProgressBar();
+  var questionsArray = questionsJSON.questions;
+  questionsJSON.questions = shuffle(questionsArray);
+
+  for(i = 0; i < questionsJSON.questions.length; i++){
+      var answersArray =  questionsJSON.questions[i].allAnswers;
+      questionsJSON.questions[i].allAnswers = shuffle(answersArray);
+  }
+
+  goToQuestion(questionNumber - 1);
 }
 
 
+function animateProgressBar(){
+  $("#time-bar div:first-child").css("animation-name", "progressBar");
+  $("#time-bar div:first-child").css("animation-duration", "20s");
+  $("#time-bar div:first-child").css("animation-timing-function", "linear");
+  tempTimeLeft = timeRunning;
+  timeLabelUpdate();
+  labelTimeInterval = setInterval(function(){
+    timeLabelUpdate();
+  }, 1000);
+};
 
-$(document).ready(function() {
-  downloadData();
-
-  $("#type-quiz div div button").click(function(){
-
-
-    questionsCount = questionsJSON.questions.length;
-
-
-
-
-  });
-
-
-  function animateProgressBar(){
-    timeLabelUpdate(timeRunning);
-    $("#time-bar div:first-child").css("animation-name", "progressBar");
-    $("#time-bar div:first-child").css("animation-duration", "20s");
-    $("#time-bar div:first-child").css("animation-timing-function", "linear");
-  };
-
-  function timeLabelUpdate(timeLeft){
-    if(timeLeft > 0){
-      $("#time-counter label").text(timeLeft + " s");
-      timeLeft--;
+function timeLabelUpdate(){
+  if(tempTimeLeft > 0){
+    $("#time-counter label").text(tempTimeLeft + " s");
+    tempTimeLeft--;
+  }else{
+    $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "#c6c2c2");
+    beforeNextQuestion();
+    if(questionNumber <= questionsCount){
       setTimeout(function(){
-        timeLabelUpdate(timeLeft);
-      }, 1000);
-    }
-  }
-
-  $("#answers div button").click(function(element){
-
-    $("#answers").addClass("disabled-pointer");
-    $("#time-bar").stop(true);
-    var answerIndex = questionsJSON.questions[questionNumber - 1].correctAnswer;
-    var buttonIndex = $("#answers div button").index(this);
-
-    if(buttonIndex == answerIndex){
-      $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "green");
-      $(this).removeClass("btn-primary").addClass("btn-success");
-
-    }else{
-      $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "red");
-      $(this).removeClass("btn-primary").addClass("btn-danger");
-      $("#answers div:nth-child(" + (answerIndex + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
-      wrongAnswers[questionNumber - 1] = buttonIndex;
-    }
-
-    if(questionNumber < questionsCount){
-      questionNumber++;
-      setTimeout(updateQuestion, 1500);
-    }else{
-      setTimeout(finishQuiz, 1500);
-    }
-  });
-
-});
-
-function goToQuestion(index){
-  $("#question h2").text("Pytanie " + (index + 1));
-  $("#question p").text(questionsJSON.questions[index].question);
-  $("#answers div button span:nth-child(2)").each(function(index2){
-    $(this).text(questionsJSON.questions[index].allAnswers[index2]);
-  });
-
-  $("#answers div button").removeClass("btn-success btn-danger").addClass("btn-primary");
-  if(isQuizFinnish){
-    var correctAnswer = questionsJSON.questions[index].correctAnswer;
-    $("#answers div:nth-child(" + (correctAnswer + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
-    if(wrongAnswers[index] !== typeof undefined){
-      $("#answers div:nth-child(" + (wrongAnswers[index] + 1) + ") button").removeClass("btn-primary").addClass("btn-danger");
+        goToQuestion(questionNumber - 1);
+      }, 100);
+    } else {
+      finishQuiz();
     }
   }
 }
@@ -145,6 +110,67 @@ function finishQuiz(){
   $("#questions div.time-progress").slideUp();
   $("#results").slideDown();
   $("#answers").addClass("disabled-pointer");
+}
+
+$(document).ready(function() {
+  downloadData();
+
+  $("#answers div button").click(function(element){
+
+    $("#answers").addClass("disabled-pointer");
+    $("#time-bar").stop(true);
+    var answerIndex = Number(questionsJSON.questions[questionNumber - 1].correctAnswer);
+    var buttonIndex = $("#answers div button").index(this);
+
+    if(buttonIndex == answerIndex){
+      $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "#b2e0ac");
+      $(this).removeClass("btn-primary").addClass("btn-success");
+    }else{
+      $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "#ce9292");
+      $(this).removeClass("btn-primary").addClass("btn-danger");
+      $("#answers div:nth-child(" + (answerIndex + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
+      wrongAnswers[questionNumber - 1] = buttonIndex;
+    }
+
+    if(questionNumber < questionsCount){
+      beforeNextQuestion();
+      setTimeout(function(){
+        goToQuestion(questionNumber - 1);
+      }, 1500);
+    }else{
+      beforeNextQuestion();
+      setTimeout(finishQuiz, 1500);
+    }
+  });
+});
+
+function beforeNextQuestion(){
+  questionNumber++;
+  clearInterval(labelTimeInterval);
+  $("#time-counter label").text(timeRunning + " s");
+  $("#time-bar div:first-child").css("animation-name", "");
+  $("#time-bar div:first-child").css("animation-duration", "");
+  $("#time-bar div:first-child").css("animation-timing-function", "");
+}
+
+function goToQuestion(index){
+  $("#question h2").text("Pytanie " + (index + 1));
+  $("#question p").text(questionsJSON.questions[index].question);
+  $("#answers div button span:nth-child(2)").each(function(index2){
+    $(this).text(questionsJSON.questions[index].allAnswers[index2]);
+  });
+
+  $("#answers div button").removeClass("btn-success btn-danger").addClass("btn-primary");
+  if(isQuizFinnish){
+    var correctAnswer = Number(questionsJSON.questions[index].correctAnswer);
+    $("#answers div:nth-child(" + (correctAnswer + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
+    if(typeof wrongAnswers[index] !==  'undefined'){
+      $("#answers div:nth-child(" + (wrongAnswers[index] + 1) + ") button").removeClass("btn-primary").addClass("btn-danger");
+    }
+  }else{
+    $("#answers").removeClass("disabled-pointer");
+    animateProgressBar();
+  }
 }
 
 function shuffle(array) {
@@ -168,39 +194,4 @@ function shuffle(array) {
     array[randomIndex] = temporaryValue;
   }
   return array;
-}
-
-
-function updateQuestion(){
-
-  $("#answers").removeClass("disabled-pointer");
-  $("#answers div button").removeClass("btn-success btn-danger").addClass("btn-primary");
-
-  $("#question h2").text("Pytanie " + questionNumber);
-  $("#question p").text(questionsJSON.questions[questionNumber - 1].question);
-
-  var questionsArray =  questionsJSON.questions[questionNumber - 1].allAnswers;
-
-  questionsJSON.questions[questionNumber - 1].allAnswers = shuffle(questionsArray);
-
-  $("#answers div button span:nth-child(2)").each(function(index){
-    $(this).text(questionsJSON.questions[questionNumber - 1].allAnswers[index]);
-  });
-}
-
-function progressBar(timeleft, timetotal, $element){
-  var progressBarWidth = timeleft * $element.width() / timetotal;
-
-  $element.find("div:first-child").animate({width: progressBarWidth}, timeleft == timetotal ? 0 : 1000, "linear");
-  $("#time-bar label").html(timeleft + " s");
-  if(timeleft == 10)
-    $("#time-bar div:first-child").css("background", "#efde5f")
-  if(timeleft ==5)
-    $("#time-bar div:first-child").css("background", "#f26363")
-
-  if(timeleft > 0){
-    setTimeout(function(){
-      progressBar(timeleft - 1, timetotal, $element);
-    }, 1000);
-  }
 }
