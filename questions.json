@@ -1,0 +1,55 @@
+{
+   "type":"language",
+   "questions":[
+      {
+         "question":"Jakajestpoprawnaodpowiedź?",
+         "correctAnswer":"1",
+         "allAnswers":[
+            "odpowiedź A",
+            "odpowiedź B",
+            "odpowiedź C",
+            "odpowiedź D"
+         ]
+      },
+      {
+         "question":"Jakajestpoprawnaodpowiedź?",
+         "correctAnswer":"1",
+         "allAnswers":[
+            "odpowiedź A",
+            "odpowiedź B",
+            "odpowiedź C",
+            "odpowiedź D"
+         ]
+      },
+      {
+         "question":"Jakajestpoprawnaodpowiedź?",
+         "correctAnswer":"1",
+         "allAnswers":[
+            "odpowiedź A",
+            "odpowiedź B",
+            "odpowiedź C",
+            "odpowiedź D"
+         ]
+      },
+      {
+         "question":"Jakajestpoprawnaodpowiedź?",
+         "correctAnswer":"1",
+         "allAnswers":[
+            "odpowiedź A",
+            "odpowiedź B",
+            "odpowiedź C",
+            "odpowiedź D"
+         ]
+      },
+      {
+         "question":"Jakajestpoprawnaodpowiedź?",
+         "correctAnswer":"1",
+         "allAnswers":[
+            "odpowiedź A",
+            "odpowiedź B",
+            "odpowiedź C",
+            "odpowiedź D"
+         ]
+      }
+   ]
+}
