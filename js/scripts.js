@@ -1,14 +1,27 @@
 var questionsCount = 20;
 var timeRunning = 20;
 var questionNumber = 1;
-var questionURL = "https://christopher2012.github.io/questions.json"
+var questionURL = "https://christopher2012.github.io/files/questions.json"
 var questionsJSON;
 var isQuizFinnish = false;
 
-$.getJSON('https://christopher2012.github.io/questions.json', function(data) {
+$.getJSON(questionURL, function(data) {
     questionsJSON = data;
-    $("#type-quiz").removeClass("disabled");
+    setTimeout(function(){
+      generateQuizSelect();
+    }, 1000);
 });
+
+function generateQuizSelect(){
+  $("#loading-data").slideUp();
+  $("#type-quiz div").slideDown();
+
+  console.log(questionsJSON);
+
+  for(i = 0; i < questionsJSON.quiz.length; i++){
+    questionsJSON.quiz[i];
+  }
+}
 
 $(document).ready(function() {
 
@@ -40,10 +53,21 @@ $(document).ready(function() {
 
 
   function animateProgressBar(){
+    timeLabelUpdate(timeRunning);
     $("#time-bar div:first-child").css("animation-name", "progressBar");
     $("#time-bar div:first-child").css("animation-duration", "20s");
     $("#time-bar div:first-child").css("animation-timing-function", "linear");
   };
+
+  function timeLabelUpdate(timeLeft){
+    if(timeLeft > 0){
+      $("#time-counter label").text(timeLeft + " s");
+      timeLeft--;
+      setTimeout(function(){
+        timeLabelUpdate(timeLeft);
+      }, 1000);
+    }
+  }
 
   $("#answers div button").click(function(element){
 
@@ -65,7 +89,7 @@ $(document).ready(function() {
       questionNumber++;
       setTimeout(updateQuestion, 1500);
     }else{
-      finishQuiz();
+      setTimeout(finishQuiz, 1500);
     }
   });
 
@@ -88,6 +112,8 @@ function goToQuestion(index){
 
 function finishQuiz(){
   isQuizFinnish = true;
+
+  $("#answers div button").removeClass("btn-success btn-danger").addClass("btn-primary");
 
   $("#progress-table tbody tr td").click(function(element){
     goToQuestion($("#progress-table tbody tr td").index(this));
@@ -156,17 +182,3 @@ function progressBar(timeleft, timetotal, $element){
     }, 1000);
   }
 }
-
-//var xhttp = new XMLHttpRequest();
-//xhttp.open("GET", "https://christopher2012.github.io/questions.json", true);
-//xhttp.setRequestHeader("Content-type", "application/json");
-//xhttp.send();
-//console.log(xhttp.responseText);
-//var response = JSON.parse(xhttp.responseText);
-
-//$("#time-bar div").addClass("progress-bar-animation");
-$(function(){
-    $.getJSON('https://christopher2012.github.io/questions.json', function(data) {
-        console.log(data);
-    });
-});

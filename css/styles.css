@@ -88,11 +88,14 @@
   margin: auto;
 }
 
+.no-display {
+  display: none;
+}
+
 .disabled {
   pointer-events: none;
   opacity: 0.6;
 }
-
 
 .disabled-pointer {
   pointer-events: none;
