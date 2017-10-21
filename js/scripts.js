@@ -59,7 +59,11 @@ function startQuiz(){
 
   $("#questions div h1").text(questionsJSON.type);
   $("#type-quiz").slideUp();
-  $("#questions").slideDown();
+  $("#questions").slideDown(500, function(){
+    $('html, body').animate({
+        scrollTop: $("#time-bar").offset().top
+    }, 500);
+  });
 
   var questionsArray = questionsJSON.questions;
   questionsJSON.questions = shuffle(questionsArray);
@@ -118,6 +122,7 @@ function finishQuiz(){
 }
 
 function showResults(){
+
   $("#current-quiz-result p:nth-child(2) span").text(correctAnswerCount);
   $("#current-quiz-result p:nth-child(3) span").text(wrongAnswersCount);
   $("#current-quiz-result p:nth-child(4) span").text(noAnswersCount);
@@ -144,7 +149,11 @@ function showResults(){
   $("#all-quiz-result p:nth-child(3) span").text(wrongAnswersCount);
   $("#all-quiz-result p:nth-child(4) span").text(noAnswersCount);
 
-  $("#results").slideDown();
+  $("#results").slideDown(500, function(){
+    $('html, body').animate({
+        scrollTop: $("#results").offset().top
+    }, 500);
+  });
 }
 
 $(document).ready(function() {
