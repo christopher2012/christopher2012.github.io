@@ -4,8 +4,12 @@ var questionNumber = 1;
 var questionURL = "https://christopher2012.github.io/files/questions.json"
 var questionsJSON;
 var isQuizFinnish = false;
+var wrongAnswersCount = 0;
 var wrongAnswers = [];
+var noAnswersCount = 0;
 var noAnswers = [];
+var correctAnswerCount = 0;
+var correctAnswer = [];
 var tempTimeLeft;
 var buttonTimeout;
 var labelTimeout;
@@ -88,6 +92,7 @@ function timeLabelUpdate(){
   }else{
     $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "#c6c2c2");
     beforeNextQuestion();
+    noAnswersCount ++;
     if(questionNumber <= questionsCount){
       setTimeout(function(){
         goToQuestion(questionNumber - 1);
@@ -108,8 +113,38 @@ function finishQuiz(){
   });
 
   $("#questions div.time-progress").slideUp();
-  $("#results").slideDown();
   $("#answers").addClass("disabled-pointer");
+
+  showResults();
+}
+
+function showResults(){
+  $("#current-quiz-result p:nth-child(2) span").text(correctAnswerCount);
+  $("#current-quiz-result p:nth-child(3) span").text(wrongAnswersCount);
+  $("#current-quiz-result p:nth-child(4) span").text(noAnswersCount);
+
+  var quizCount = 1;
+  if (typeof(Storage) !== "undefined") {
+    if(typeof(localStorage.quizcount) !== "undefined"){
+      quizCount = Number(localStorage.quizcount) + 1;
+      noAnswersCount = Number(localStorage.noanswers) + noAnswersCount;
+      wrongAnswersCount = Number(localStorage.wronganswers) + wrongAnswersCount;
+      correctAnswerCount = Number(localStorage.correctanswers) + correctAnswerCount;
+    } else {
+      localStorage.quizcount = 1;
+    }
+
+    localStorage.correctanswers = correctAnswerCount;
+    localStorage.wronganswers = wrongAnswersCount;
+    localStorage.noanswers = noAnswersCount;
+  }
+
+  $("#all-quiz-result h2 span").text(quizCount);
+  $("#all-quiz-result p:nth-child(2) span").text(correctAnswerCount);
+  $("#all-quiz-result p:nth-child(3) span").text(wrongAnswersCount);
+  $("#all-quiz-result p:nth-child(4) span").text(noAnswersCount);
+
+  $("#results").slideDown();
 }
 
 $(document).ready(function() {
@@ -123,6 +158,7 @@ $(document).ready(function() {
     var buttonIndex = $("#answers div button").index(this);
 
     if(buttonIndex == answerIndex){
+      correctAnswerCount ++;
       $("#progress-table tbody tr td").eq(questionNumber - 1).css("background", "#b2e0ac");
       $(this).removeClass("btn-primary").addClass("btn-success");
     }else{
@@ -130,18 +166,33 @@ $(document).ready(function() {
       $(this).removeClass("btn-primary").addClass("btn-danger");
       $("#answers div:nth-child(" + (answerIndex + 1) + ") button").removeClass("btn-primary").addClass("btn-success");
       wrongAnswers[questionNumber - 1] = buttonIndex;
+      wrongAnswersCount ++;
     }
 
-    if(questionNumber < questionsCount){
-      beforeNextQuestion();
+    beforeNextQuestion();
+    if(questionNumber <= questionsCount){
       setTimeout(function(){
         goToQuestion(questionNumber - 1);
       }, 1500);
-    }else{
-      beforeNextQuestion();
+    } else {
       setTimeout(finishQuiz, 1500);
     }
   });
+
+  document.getElementById("newQuiz").addEventListener("click", function(){
+    location.reload();
+  });
+
+  document.getElementById("clearData").addEventListener("click", function(){
+    if (typeof(Storage) !== "undefined") {
+      localStorage.removeItem("quizcount");
+      localStorage.removeItem("correctanswers");
+      localStorage.removeItem("wronganswers");
+      localStorage.removeItem("noanswers");
+      alert("Dane zostały usunięte, rozpocznij nowy quiz!");
+    }
+  });
+
 });
 
 function beforeNextQuestion(){
@@ -154,6 +205,7 @@ function beforeNextQuestion(){
 }
 
 function goToQuestion(index){
+
   $("#question h2").text("Pytanie " + (index + 1));
   $("#question p").text(questionsJSON.questions[index].question);
   $("#answers div button span:nth-child(2)").each(function(index2){
@@ -194,13 +246,4 @@ function shuffle(array) {
     array[randomIndex] = temporaryValue;
   }
   return array;
-}
-
-if (typeof(Storage) !== "undefined") {
-    // Store
-    localStorage.setItem("lastname", "Smith");
-    // Retrieve
-    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-} else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-}
+};

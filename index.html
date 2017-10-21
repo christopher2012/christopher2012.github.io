@@ -70,20 +70,28 @@
       <h1>
         KONIEC QUIZU
       </h1>
-      <div id="current-quiz-result" class="col-xs-12 col-md-6">
+      <div id="current-quiz-result" class="col-xs-12 col-md-6" align="left">
         <div>
           <h2>Obecny quiz</h2>
-          <p>Odpowiedzi poprawne</p><
-          <p>Odpowiedzi niepoprawne</p>
-          <p>Brak odpowiedzi</p>
+          <p>Odpowiedzi poprawne: <span>0</span></p>
+          <p>Odpowiedzi niepoprawne: <span>0</span></p>
+          <p>Brak odpowiedzi: <span>0</span></p>
         </div>
       </div>
-      <div id="all-quiz-result" class="col-xs-12 col-md-6">
+      <div id="all-quiz-result" class="col-xs-12 col-md-6" align="left">
         <div>
-          <h2>Wszystkie razem</h2>
-          <p>Odpowiedzi poprawne</p><span>testest</span>
-          <p>Odpowiedzi niepoprawne</p>
-          <p>Brak odpowiedzi</p>
+          <h2>Wszystkie razem (<span>0</span>)</h2>
+          <p>Odpowiedzi poprawne: <span>0</span></p>
+          <p>Odpowiedzi niepoprawne: <span>0</span></p>
+          <p>Brak odpowiedzi: <span>0</span></p>
+        </div>
+      </div>
+      <div id="result-options" class="col-md-12">
+        <div class="col-md-6"  align="center">
+          <button id="newQuiz" class="btn btn-info">Rozpocznij nowy</button>
+        </div>
+        <div id="clearData" class="col-md-6" align="center">
+          <button class="btn btn-warning">Wyczyść dane</button>
         </div>
       </div>
 

@@ -84,6 +84,11 @@
   display: none;
 }
 
+#result-options button {
+  margin-top: 24px;
+  width: 200px;
+}
+
 #results {
   margin: auto;
 }
@@ -114,6 +119,10 @@
 .question h2 {
   margin-top: 32px;
   margin-bottom: 24px;
+}
+
+#results p span {
+  font-weight: bold;
 }
 
 @media (max-width: 767px) {
