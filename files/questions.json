@@ -2,7 +2,7 @@
   "quizName" : "Quiz 2017 ZPW",
   "quiz" :[
     {
-     "type":"Języki",
+     "type":"Języki (20)",
      "questions":[
         {
            "question":"Jaka jest poprawna odpowiedź na to pytanie 1?",
@@ -207,10 +207,10 @@
      ]
     },
     {
-     "type":"Geografia",
+     "type":"Geografia (5)",
      "questions":[
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 1?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -220,7 +220,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 2?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -230,7 +230,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 3?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -240,7 +240,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 4?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -250,7 +250,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 5?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -262,10 +262,10 @@
      ]
     },
     {
-     "type":"Matematyka",
+     "type":"Matematyka (5)",
      "questions":[
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 1?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -275,7 +275,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 2?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -285,7 +285,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 3?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -295,7 +295,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 4?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -305,7 +305,7 @@
            ]
         },
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 5?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",
@@ -317,10 +317,10 @@
      ]
     },
     {
-     "type":"Wiedza potoczna",
+     "type":"Wiedza potoczna(1)",
      "questions":[
         {
-           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 1?",
            "correctAnswer":"1",
            "allAnswers":[
               "odpowiedź A",

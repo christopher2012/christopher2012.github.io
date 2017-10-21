@@ -1,5 +1,5 @@
 
-var timeRunning = 5;
+var timeRunning = 20;
 var questionNumber = 1;
 var questionURL = "https://christopher2012.github.io/files/questions.json"
 var questionsJSON;
@@ -66,7 +66,7 @@ function startQuiz(){
 
   for(i = 0; i < questionsJSON.questions.length; i++){
       var answersArray =  questionsJSON.questions[i].allAnswers;
-      questionsJSON.questions[i].allAnswers = shuffle(answersArray);
+      questionsJSON.questions[i].allAnswers = shuffle(answersArray, questionsJSON.questions[i].correctAnswer, i);
   }
 
   goToQuestion(questionNumber - 1);
@@ -133,6 +133,7 @@ function showResults(){
       localStorage.quizcount = 1;
     }
 
+    localStorage.quizcount = quizCount;
     localStorage.correctanswers = correctAnswerCount;
     localStorage.wronganswers = wrongAnswersCount;
     localStorage.noanswers = noAnswersCount;
@@ -226,22 +227,21 @@ function goToQuestion(index){
   }
 }
 
-function shuffle(array) {
+function shuffle(array, saveIndex = -1, questionIndex = -1) {
+
   var currentIndex = array.length, temporaryValue, randomIndex;
-  var correctIndex = Number(questionsJSON.questions[questionNumber - 1].correctAnswer);
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
-
-    if(correctIndex == currentIndex){
-      correctIndex = currentIndex;
-      questionsJSON.questions[questionNumber - 1].correctAnswer = correctIndex;
-    }
-
-    if(correctIndex == randomIndex){
-      correctIndex = randomIndex;
-      questionsJSON.questions[questionNumber - 1].correctAnswer = correctIndex;
-    }
     currentIndex -= 1;
+    if(saveIndex > -1){
+      if(currentIndex == saveIndex){
+        saveIndex = randomIndex;
+        questionsJSON.questions[questionIndex].correctAnswer = randomIndex;
+      }else if(randomIndex == saveIndex){
+        saveIndex = currentIndex;
+        questionsJSON.questions[questionIndex].correctAnswer = currentIndex;
+      }
+    }
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
