@@ -1,375 +1,335 @@
 {
-  "quizName": "Quiz 2017 ZPW",
-  "quiz": [{
-      "type": "Języki",
-      "questions": [{
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 1?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+  "quizName" : "Quiz 2017 ZPW",
+  "quiz" :[
+    {
+     "type":"Języki",
+     "questions":[
+        {
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 1?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 2?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 2?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 3?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 3?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 4?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 4?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 5?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
-        } {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 1?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 5?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 2?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 6?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 3?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 7?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 4?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 8?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 5?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
-        } {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 1?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 9?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 2?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 10?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 3?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 11?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 4?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 12?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 5?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
-        } {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 1?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 13?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 2?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 14?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 3?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 15?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 4?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 16?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 5?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
-        } {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 1?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 17?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 2?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 18?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 3?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 19?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 4?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
-        },
-        {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie 5?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie 20?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         }
-      ]
+     ]
     },
     {
-      "type": "Geografia",
-      "questions": [{
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+     "type":"Geografia",
+     "questions":[
+        {
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         }
-      ]
+     ]
     },
     {
-      "type": "Matematyka",
-      "questions": [{
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+     "type":"Matematyka",
+     "questions":[
+        {
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         },
         {
-          "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-          "correctAnswer": "1",
-          "allAnswers": [
-            "odpowiedź A",
-            "odpowiedź B",
-            "odpowiedź C",
-            "odpowiedź D"
-          ]
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
         }
-      ]
+     ]
     },
     {
-      "type": "Wiedza potoczna",
-      "questions": [{
-        "question": "Jaka jest poprawna odpowiedź na to pytanie?",
-        "correctAnswer": "1",
-        "allAnswers": [
-          "odpowiedź A",
-          "odpowiedź B",
-          "odpowiedź C",
-          "odpowiedź D"
-        ]
-      }]
+     "type":"Wiedza potoczna",
+     "questions":[
+        {
+           "question":"Jaka jest poprawna odpowiedź na to pytanie?",
+           "correctAnswer":"1",
+           "allAnswers":[
+              "odpowiedź A",
+              "odpowiedź B",
+              "odpowiedź C",
+              "odpowiedź D"
+           ]
+        }
+     ]
     }
   ]
 }

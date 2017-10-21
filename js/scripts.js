@@ -1,4 +1,4 @@
-var questionsCount = 20;
+
 var timeRunning = 5;
 var questionNumber = 1;
 var questionURL = "https://christopher2012.github.io/files/questions.json"
@@ -12,7 +12,6 @@ var correctAnswerCount = 0;
 var correctAnswer = [];
 var tempTimeLeft;
 var buttonTimeout;
-var labelTimeout;
 var labelTimeInterval;
 
 var tableColorRed = "";
@@ -148,6 +147,8 @@ function showResults(){
 }
 
 $(document).ready(function() {
+
+  $.ajaxSetup({ cache: false });
   downloadData();
 
   $("#answers div button").click(function(element){
