@@ -72,7 +72,7 @@ function startQuiz(){
 
 function animateProgressBar(){
   $("#time-bar div:first-child").css("animation-name", "progressBar");
-  $("#time-bar div:first-child").css("animation-duration", "20s");
+  $("#time-bar div:first-child").css("animation-duration", timeRunning + "s");
   $("#time-bar div:first-child").css("animation-timing-function", "linear");
   tempTimeLeft = timeRunning;
   timeLabelUpdate();
@@ -194,4 +194,13 @@ function shuffle(array) {
     array[randomIndex] = temporaryValue;
   }
   return array;
+}
+
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("lastname", "Smith");
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
 }
