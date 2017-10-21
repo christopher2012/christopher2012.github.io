@@ -60,9 +60,15 @@ function startQuiz(){
   $("#questions div h1").text(questionsJSON.type);
   $("#type-quiz").slideUp();
   $("#questions").slideDown(500, function(){
-    $('html, body').animate({
-        scrollTop: $("#time-bar").offset().top
-    }, 500);
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+          window.scrollTo(0, $("#time-bar").offset().top);
+    }else{
+      $('html,body').animate({
+          scrollTop: $("#time-bar").offset().top
+      }, 500, function(){
+          $('html,body').clearQueue();
+      });
+    }
   });
 
   var questionsArray = questionsJSON.questions;
@@ -110,7 +116,6 @@ function finishQuiz(){
   isQuizFinnish = true;
 
   $("#answers div button").removeClass("btn-success btn-danger").addClass("btn-primary");
-
   $("#progress-table tbody tr td").click(function(element){
     goToQuestion($("#progress-table tbody tr td").index(this));
   });
@@ -148,11 +153,28 @@ function showResults(){
   $("#all-quiz-result p:nth-child(2) span").text(correctAnswerCount);
   $("#all-quiz-result p:nth-child(3) span").text(wrongAnswersCount);
   $("#all-quiz-result p:nth-child(4) span").text(noAnswersCount);
+  if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+              window.scrollTo(200,100)
+  }else{
+              $('html,body').animate({
+                  scrollTop: 100,
+                  scrollLeft: 200
+              }, 800, function(){
+                  $('html,body').clearQueue();
+              });
+  }
+
 
   $("#results").slideDown(500, function(){
-    $('html, body').animate({
-        scrollTop: $("#results").offset().top
-    }, 500);
+    if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+          window.scrollTo(0, $("#results").offset().top);
+    }else{
+      $('html,body').animate({
+          scrollTop: $("#results").offset().top
+      }, 500, function(){
+          $('html,body').clearQueue();
+      });
+    }
   });
 }
 
