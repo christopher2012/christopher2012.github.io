@@ -1,7 +1,7 @@
 
 var timeRunning = 20;
 var questionNumber = 1;
-var questionURL = "https://christopher2012.github.io/files/questions.json"
+var questionURL = "https://christopher2012.github.io/quiz/files/questions.json"
 var questionsJSON;
 var isQuizFinnish = false;
 var wrongAnswersCount = 0;
