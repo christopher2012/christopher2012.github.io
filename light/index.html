@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="https://christopher2012.github.io/test/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="https://christopher2012.github.io/test/css/font-awesome.css" />
+		<script type="text/javascript">
+			function httpGetAsync(theUrl) {
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.onreadystatechange = function() {
+					if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+						console.log(xmlHttp.responseText);
+				};
+				xmlHttp.open("GET", theUrl, true);
+				xmlHttp.send(null);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1><strong>Main light</strong></h1>
+			</header>
+			<section class="main">
+				<div class="switch demo4" onclick="httpGetAsync('https://192.168.1.21/test');">
+					<input type="checkbox" checked>
+					<label> <i class='icon-off'></i></label>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

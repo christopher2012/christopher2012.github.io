@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="http://christopher2012.github.io/test/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://christopher2012.github.io/test/css/font-awesome.css" />
+    </head>
+<body>
+<div id="container" class="container">
+<header>
+<h1>
+<strong>Main light</strong>
+</h1>
+</header>
+</div>
+<script type="text/javascript">
+	var container = document.getElementById('container');
+	container.className = 'container';
+	var section = document.createElement('section');
+	section.className= 'main';
+	var div2 = document.createElement('div');
+	div2.className = 'switch demo4';
+	var input = document.createElement('input');
+	var inputAtt = document.createAttribute("type");        
+	inputAtt.value = "checkbox";           
+	input.setAttributeNode(inputAtt);
+	var label = document.createElement('label');
+	var i = document.createElement('i');
+	i.className = 'icon-off';
+	
+	label.appendChild(i);
+	input.appendChild(label);
+	div2.appendChild(input);
+	section.appendChild(div2);
+	container.appendChild(section);
+	console.log(container);
+</script>
+</body>
+</html>
