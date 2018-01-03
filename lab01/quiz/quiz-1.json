@@ -1,0 +1,56 @@
+{
+  "id": 1,
+  "name": "Quiz - pierwszy",
+  "questions": [
+    {
+      "question": "Jakie miasto jest stolicą Polski?",
+      "answers": [
+        "Kraków",
+        "Sosnowiec",
+        "Warszawa",
+        "Zakopane"
+      ],
+      "correct": [2]
+    },
+    {
+      "question": "2 + 2 = ?",
+      "answers": [
+        "4",
+        "cztery",
+        "osiem",
+        "55"
+      ],
+      "correct": [0,1]
+    },
+    {
+      "question": "Ile jest kół ratunkowych w milionerach?",
+      "answers": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct": [2]
+    },
+    {
+      "question": "Kto jest debeściak?",
+      "answers": [
+        "Wąski",
+        "Siara",
+        "Killer",
+        "Ryba"
+      ],
+      "correct": [0]
+    },
+    {
+      "question": "Dokończ. Gdzie kucharek sześć tam nie ma co...",
+      "answers": [
+        "papusiać",
+        "zajadać",
+        "gotować",
+        "jeść"
+      ],
+      "correct": [3]
+    }
+  ]
+}
